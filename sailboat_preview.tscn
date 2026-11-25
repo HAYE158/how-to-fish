@@ -1,0 +1,55 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://single_mast_sailboat.tscn" id="1_hs4gs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1eca"]
+resource_name = "StudioFloor"
+albedo_color = Color(0.35686275, 0.47058824, 0.5176471, 1)
+roughness = 0.77
+
+[sub_resource type="BoxMesh" id="BoxMesh_18mvm"]
+size = Vector3(200, 0.12, 200)
+
+[sub_resource type="Environment" id="Environment_k3jvj"]
+background_mode = 1
+background_color = Color(0.35686275, 0.47058824, 0.5176471, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.8901961, 0.92941177, 1, 1)
+ambient_light_energy = 0.56
+
+[node name="SailboatPreview" type="Node3D" unique_id=617104177]
+
+[node name="SingleMastSailboat" type="Node3D" parent="." unique_id=1153007358 instance=ExtResource("1_hs4gs")]
+
+[node name="Studio" type="Node3D" parent="." unique_id=1206698605]
+
+[node name="Floor" type="MeshInstance3D" parent="Studio" unique_id=684090700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.82, 0)
+material_override = SubResource("StandardMaterial3D_l1eca")
+mesh = SubResource("BoxMesh_18mvm")
+
+[node name="Environment" type="WorldEnvironment" parent="Studio" unique_id=1973273357]
+environment = SubResource("Environment_k3jvj")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="Studio" unique_id=1536158189]
+transform = Transform3D(-0.7071068, -0.529813, 0.4682929, 0, 0.6622662, 0.74926865, -0.7071068, 0.529813, -0.4682929, 5, 8, -5)
+light_color = Color(1, 0.94509804, 0.84313726, 1)
+light_energy = 1.45
+shadow_enabled = true
+directional_shadow_max_distance = 26.0
+
+[node name="FillLight" type="DirectionalLight3D" parent="Studio" unique_id=216871769]
+transform = Transform3D(-0.4472136, 0.6666667, -0.5962848, 0, 0.6666667, 0.745356, 0.8944272, 0.33333334, -0.2981424, -4, 5, -2)
+light_color = Color(0.7921569, 0.8666667, 0.972549, 1)
+light_energy = 0.59
+
+[node name="RimLight" type="DirectionalLight3D" parent="Studio" unique_id=684760443]
+transform = Transform3D(0.92847663, 0.27639204, -0.24806947, 0, 0.6679475, 0.7442084, 0.37139064, -0.6909801, 0.6201737, -2, 6, 5)
+light_color = Color(1, 0.94509804, 0.8627451, 1)
+light_energy = 0.81
+
+[node name="Camera" type="Camera3D" parent="Studio" unique_id=121431377]
+transform = Transform3D(-0.6150318, -0.2991342, 0.7295578, 0, 0.925245, 0.3793701, -0.78850234, 0.23332466, -0.5690551, 10, 6.8, -7.9)
+projection = 1
+current = true
+size = 8.8
