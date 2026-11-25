@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="Shader" path="res://coastal_water.gdshader" id="1_water"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_water"]
+shader = ExtResource("1_water")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_water"]
+size = Vector2(108, 108)
+subdivide_width = 239
+subdivide_depth = 239
+
+[node name="CoastalWater" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_water")
+cast_shadow = 0
+extra_cull_margin = 0.5
+mesh = SubResource("PlaneMesh_water")
