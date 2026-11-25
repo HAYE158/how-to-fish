@@ -1,0 +1,65 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://surfboard.tscn" id="1_1rs0b"]
+
+[sub_resource type="Environment" id="Environment_28cet"]
+background_mode = 1
+background_color = Color(0.105882354, 0.1764706, 0.21176471, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.84705883, 0.92156863, 1, 1)
+ambient_light_energy = 0.47
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_052f0"]
+resource_name = "Slate backdrop"
+albedo_color = Color(0.20784314, 0.30980393, 0.3647059, 1)
+roughness = 0.91
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f4ob4"]
+size = Vector2(150, 150)
+
+[node name="SurfboardPreview" type="Node3D" unique_id=1470514704]
+
+[node name="DeckView" type="Node3D" parent="." unique_id=520541890 instance=ExtResource("1_1rs0b")]
+transform = Transform3D(0.9675485, 0.15614244, -0.19866933, -0.19613178, -0.031651683, -0.9800666, -0.15931821, 0.98722726, -4.3153076e-08, -0.48, 1.038, 0.05)
+metadata/length_m = 1.93
+metadata/width_m = 0.51
+metadata/max_thickness_m = 0.065
+
+[node name="BottomView" type="Node3D" parent="." unique_id=19574907 instance=ExtResource("1_1rs0b")]
+transform = Transform3D(-0.83512205, 0.500597, 0.22797754, -0.1955383, 0.11721152, -0.97366637, -0.5141361, -0.85770863, -3.749164e-08, 0.49, 1.038, -0.07)
+metadata/length_m = 1.93
+metadata/width_m = 0.51
+metadata/max_thickness_m = 0.065
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=870904337]
+environment = SubResource("Environment_28cet")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1462709320]
+material_override = SubResource("StandardMaterial3D_052f0")
+mesh = SubResource("PlaneMesh_f4ob4")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="." unique_id=1147011238]
+transform = Transform3D(0.70710677, 0.48507127, -0.5144958, 0, 0.7276069, 0.6859944, 0.70710677, -0.48507127, 0.5144958, -3, 5, 3)
+light_color = Color(1, 0.9411765, 0.85882354, 1)
+light_energy = 2.0
+shadow_enabled = true
+directional_shadow_max_distance = 10.0
+
+[node name="FillLight" type="DirectionalLight3D" parent="." unique_id=1263035885]
+transform = Transform3D(0.46574643, -0.37361276, 0.8021806, 0, 0.9065025, 0.42220032, -0.8849182, -0.1966383, 0.42220032, 3.8, 3, 2)
+light_color = Color(0.80784315, 0.91764706, 1, 1)
+light_energy = 0.8
+directional_shadow_max_distance = 10.0
+
+[node name="EdgeLight" type="DirectionalLight3D" parent="." unique_id=1616461017]
+transform = Transform3D(-0.9805807, -0.09944903, 0.16903085, 0, 0.86189157, 0.50709254, -0.19611613, 0.49724513, -0.8451542, 1, 4, -5)
+light_color = Color(0.84705883, 0.9647059, 1, 1)
+light_energy = 1.85
+directional_shadow_max_distance = 10.0
+
+[node name="Camera" type="Camera3D" parent="." unique_id=490483009]
+transform = Transform3D(0.99998456, -0.0011402814, 0.0054371874, 0, 0.97870886, 0.20525382, -0.00555547, -0.20525065, 0.9786937, 0.04, 2.54, 7.2)
+projection = 1
+current = true
+size = 2.54
