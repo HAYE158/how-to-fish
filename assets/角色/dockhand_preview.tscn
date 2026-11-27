@@ -1,0 +1,59 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://assets/角色/dockhand_preview.gd" id="1_3uxr0"]
+[ext_resource type="PackedScene" path="res://assets/角色/dockhand.tscn" id="2_uod7p"]
+[ext_resource type="Script" path="res://assets/角色/dockhand.gd" id="3_6y1t7"]
+
+[sub_resource type="Environment" id="Environment_0v15w"]
+background_mode = 1
+background_color = Color(0.54901963, 0.654902, 0.68235296, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.8627451, 0.9137255, 0.9411765, 1)
+ambient_light_energy = 0.43
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1hl1"]
+resource_name = "Studio floor"
+albedo_color = Color(0.4392157, 0.53333336, 0.57254905, 1)
+roughness = 0.8
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y3cc3"]
+size = Vector2(100, 100)
+
+[node name="WhiteAvatarPreview" type="Node3D" unique_id=1218957031]
+script = ExtResource("1_3uxr0")
+
+[node name="Avatar" type="Node3D" parent="." unique_id=323840418 instance=ExtResource("2_uod7p")]
+script = ExtResource("3_6y1t7")
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=2002352470]
+environment = SubResource("Environment_0v15w")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=188971351]
+material_override = SubResource("StandardMaterial3D_r1hl1")
+mesh = SubResource("PlaneMesh_y3cc3")
+
+[node name="Key" type="DirectionalLight3D" parent="." unique_id=1067990775]
+transform = Transform3D(-0.6957952, -0.5191449, 0.4963442, 0, 0.69105595, 0.7228012, -0.7182402, 0.5029216, -0.48083344, 3.2, 5.6, -3.1)
+light_color = Color(1, 0.9490196, 0.8666667, 1)
+light_energy = 0.98
+shadow_enabled = true
+directional_shadow_max_distance = 10.0
+
+[node name="Fill" type="DirectionalLight3D" parent="." unique_id=110035970]
+transform = Transform3D(-0.49613893, 0.33060437, -0.8028367, 0, 0.9246681, 0.38077396, 0.86824316, 0.18891679, -0.45876384, -3.5, 2.6, -2)
+light_color = Color(0.85882354, 0.93333334, 1, 1)
+light_energy = 0.32
+directional_shadow_max_distance = 10.0
+
+[node name="Rim" type="DirectionalLight3D" parent="." unique_id=158859361]
+transform = Transform3D(0.9593655, 0.14076558, -0.24454631, 0, 0.8666743, 0.49887446, 0.28216633, -0.47860295, 0.83145744, -1.5, 4, 5.1)
+light_color = Color(0.8980392, 0.98039216, 1, 1)
+light_energy = 0.87
+directional_shadow_max_distance = 10.0
+
+[node name="Camera" type="Camera3D" parent="." unique_id=2066849213]
+transform = Transform3D(-0.9925328, -0.018271504, 0.12060235, 0, 0.98871744, 0.14979272, -0.12197859, 0.14867418, -0.9813344, 0.628, 1.69, -5.11)
+projection = 1
+current = true
+size = 2.36

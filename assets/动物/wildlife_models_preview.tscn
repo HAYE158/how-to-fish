@@ -1,0 +1,111 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/动物/honey_badger.tscn" id="1_ybjkq"]
+[ext_resource type="PackedScene" path="res://assets/动物/wolf.tscn" id="2_alq7p"]
+[ext_resource type="PackedScene" path="res://assets/动物/sea_urchin.tscn" id="3_oohmb"]
+[ext_resource type="PackedScene" path="res://assets/动物/jellyfish.tscn" id="4_ylr87"]
+[ext_resource type="PackedScene" path="res://assets/动物/flying_fish.tscn" id="5_o6jwo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rx4tm"]
+resource_name = "b5a68e"
+albedo_color = Color(0.70980394, 0.6509804, 0.5568628, 1)
+metallic_specular = 0.08
+roughness = 0.92
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3yyvs"]
+top_radius = 0.555
+bottom_radius = 0.571
+height = 0.095
+radial_segments = 48
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxx03"]
+resource_name = "56777a"
+albedo_color = Color(0.3372549, 0.46666667, 0.47843137, 1)
+metallic_specular = 0.08
+roughness = 0.92
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mh43g"]
+size = Vector2(160, 160)
+
+[sub_resource type="Environment" id="Environment_10t48"]
+background_mode = 1
+background_color = Color(0.44705883, 0.6039216, 0.6117647, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.8980392, 0.9529412, 0.9647059, 1)
+ambient_light_energy = 0.45
+tonemap_mode = 2
+
+[node name="WildlifeModelsPreview" type="Node3D" unique_id=780410432]
+
+[node name="SandstoneStand0" type="MeshInstance3D" parent="." unique_id=1727930374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87, 0.0475, 0)
+material_override = SubResource("StandardMaterial3D_rx4tm")
+mesh = SubResource("CylinderMesh_3yyvs")
+
+[node name="HoneyBadger" type="Node3D" parent="." unique_id=1551342625 instance=ExtResource("1_ybjkq")]
+transform = Transform3D(-0.6152742, 0, 1.0765861, 0, 1.24, 0, -1.0765861, 0, -0.6152742, -2.87, 0.098, 0)
+
+[node name="SandstoneStand1" type="MeshInstance3D" parent="." unique_id=242222510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38, 0.0475, 0)
+material_override = SubResource("StandardMaterial3D_rx4tm")
+mesh = SubResource("CylinderMesh_3yyvs")
+
+[node name="Wolf" type="Node3D" parent="." unique_id=1853093456 instance=ExtResource("2_alq7p")]
+transform = Transform3D(-0.56877923, 0, 0.79805404, 0, 0.98, 0, -0.79805404, 0, -0.56877923, -1.38, 0.098, 0)
+
+[node name="SandstoneStand2" type="MeshInstance3D" parent="." unique_id=1663379635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, 0.0475, 0)
+material_override = SubResource("StandardMaterial3D_rx4tm")
+mesh = SubResource("CylinderMesh_3yyvs")
+
+[node name="SeaUrchin" type="Node3D" parent="." unique_id=1214099323 instance=ExtResource("3_oohmb")]
+transform = Transform3D(4.202277, 0, 0.6351121, 0, 4.25, 0, -0.6351121, 0, 4.202277, 0.09, 0.098, 0)
+
+[node name="SandstoneStand3" type="MeshInstance3D" parent="." unique_id=1274176121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, 0.0475, 0)
+material_override = SubResource("StandardMaterial3D_rx4tm")
+mesh = SubResource("CylinderMesh_3yyvs")
+
+[node name="Jellyfish" type="Node3D" parent="." unique_id=2022990287 instance=ExtResource("4_ylr87")]
+transform = Transform3D(2.1225927, 0, 0.49699104, 0, 2.18, 0, -0.49699104, 0, 2.1225927, 1.43, 0.228, 0)
+
+[node name="SandstoneStand4" type="MeshInstance3D" parent="." unique_id=1225326738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88, 0.0475, 0)
+material_override = SubResource("StandardMaterial3D_rx4tm")
+mesh = SubResource("CylinderMesh_3yyvs")
+
+[node name="FlyingFish" type="Node3D" parent="." unique_id=1702638856 instance=ExtResource("5_o6jwo")]
+transform = Transform3D(-1.825726, 0, 2.0027044, 0, 2.71, 0, -2.0027044, 0, -1.825726, 2.88, 0.228, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=97598547]
+material_override = SubResource("StandardMaterial3D_lxx03")
+mesh = SubResource("PlaneMesh_mh43g")
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=238572166]
+environment = SubResource("Environment_10t48")
+
+[node name="WarmKey" type="DirectionalLight3D" parent="." unique_id=1994957639]
+transform = Transform3D(0.70710677, 0.467121, -0.5308464, 0, 0.7507302, 0.6606089, 0.70710677, -0.467121, 0.5308464, -4.5, 6.2, 4.5)
+light_color = Color(1, 0.94509804, 0.8666667, 1)
+light_energy = 1.05
+shadow_enabled = true
+directional_shadow_max_distance = 16.0
+
+[node name="BlueFill" type="DirectionalLight3D" parent="." unique_id=956681160]
+transform = Transform3D(0.58480155, -0.41921732, 0.6944523, 0, 0.85610515, 0.51680166, -0.8111764, -0.30222642, 0.5006516, 4.3, 3.8, 3.1)
+light_color = Color(0.87058824, 0.9372549, 1, 1)
+light_energy = 0.37
+directional_shadow_max_distance = 16.0
+
+[node name="Rim" type="DirectionalLight3D" parent="." unique_id=1504624958]
+transform = Transform3D(-0.9230769, -0.2229827, 0.31338108, 0, 0.8147909, 0.57975507, -0.38461536, 0.5351585, -0.75211465, 2, 4.3, -4.8)
+light_color = Color(0.87058824, 1, 0.9607843, 1)
+light_energy = 0.55
+directional_shadow_max_distance = 16.0
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1017341897]
+transform = Transform3D(1, 0, 0, 0, 0.9111079, 0.4121679, 0, -0.4121679, 0.9111079, 0, 4.42, 8.4)
+keep_aspect = 0
+projection = 1
+current = true
+size = 7.55
