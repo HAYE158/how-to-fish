@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://cpa5iruca4qkv"]
 
-[ext_resource type="PackedScene" path="res://coastal_water.tscn" id="1_vm2eo"]
-[ext_resource type="Shader" uid="uid://baik6eut0bjpr" path="res://coastal_water.gdshader" id="2_ui2og"]
-[ext_resource type="PackedScene" path="res://single_mast_sailboat.tscn" id="3_h7qk4"]
-[ext_resource type="PackedScene" path="res://surfboard.tscn" id="4_o6pst"]
+[ext_resource type="PackedScene" path="res://assets/水/coastal_water.tscn" id="1_vm2eo"]
+[ext_resource type="Shader" uid="uid://baik6eut0bjpr" path="res://assets/水/coastal_water.gdshader" id="2_ui2og"]
+[ext_resource type="PackedScene" path="res://assets/船/帆船/single_mast_sailboat.tscn" id="3_h7qk4"]
+[ext_resource type="PackedScene" path="res://assets/冲浪板/surfboard.tscn" id="4_o6pst"]
 
 [sub_resource type="Image" id="Image_vm2eo"]
 data = {

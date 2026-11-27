@@ -4,3 +4,10 @@
 
 # Local agent workspace (do not version)
 .gai2/
+
+# WorkBuddy 运行时目录：会话日志、记忆、缓存，不提交到仓库
+.workbuddy/
+.w0rkbvddy/
+
+# 本地文档目录（不提交到仓库）
+docs/
