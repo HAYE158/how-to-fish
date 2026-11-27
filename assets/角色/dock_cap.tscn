@@ -1,0 +1,73 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxrl3"]
+resource_name = "rubber"
+albedo_color = Color(0.16078432, 0.23529412, 0.27450982, 1)
+roughness = 0.79
+
+[sub_resource type="SphereMesh" id="SphereMesh_brx0g"]
+radius = 1.0
+height = 2.0
+radial_segments = 24
+rings = 12
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ey0ck"]
+resource_name = "trim"
+albedo_color = Color(0.972549, 0.7294118, 0.3647059, 1)
+roughness = 0.79
+
+[sub_resource type="SphereMesh" id="SphereMesh_4d720"]
+radius = 1.0
+height = 2.0
+radial_segments = 24
+rings = 12
+
+[sub_resource type="SphereMesh" id="SphereMesh_3gdln"]
+radius = 1.0
+height = 2.0
+radial_segments = 24
+rings = 12
+
+[sub_resource type="SphereMesh" id="SphereMesh_dfvq0"]
+radius = 1.0
+height = 2.0
+radial_segments = 24
+rings = 12
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5u3x"]
+resource_name = "thread"
+albedo_color = Color(0.89411765, 0.9098039, 0.79607844, 1)
+roughness = 0.79
+
+[sub_resource type="SphereMesh" id="SphereMesh_ku1hu"]
+radius = 1.0
+height = 2.0
+radial_segments = 24
+rings = 12
+
+[node name="DockCap" type="Node3D" unique_id=731046212]
+
+[node name="Crown" type="MeshInstance3D" parent="." unique_id=1592536198]
+transform = Transform3D(0.277, 0, 0, 0, 0.144, 0, 0, 0, 0.226, 0, 0.019, 0.017)
+material_override = SubResource("StandardMaterial3D_wxrl3")
+mesh = SubResource("SphereMesh_brx0g")
+
+[node name="Band" type="MeshInstance3D" parent="." unique_id=1744739049]
+transform = Transform3D(0.283, 0, 0, 0, 0.035, 0, 0, 0, 0.228, 0, -0.012, 0.008)
+material_override = SubResource("StandardMaterial3D_ey0ck")
+mesh = SubResource("SphereMesh_4d720")
+
+[node name="Brim" type="MeshInstance3D" parent="." unique_id=710803645]
+transform = Transform3D(0.213, 0, 0, 0, 0.025842858, 0.015917853, 0, -0.002854236, 0.14412363, 0, -0.017, -0.197)
+material_override = SubResource("StandardMaterial3D_ey0ck")
+mesh = SubResource("SphereMesh_3gdln")
+
+[node name="CapButton" type="MeshInstance3D" parent="." unique_id=77187569]
+transform = Transform3D(0.027, 0, 0, 0, 0.011, 0, 0, 0, 0.026, 0, 0.158, 0.014)
+material_override = SubResource("StandardMaterial3D_ey0ck")
+mesh = SubResource("SphereMesh_dfvq0")
+
+[node name="Badge" type="MeshInstance3D" parent="." unique_id=1952404877]
+transform = Transform3D(0.045, 0, 0, 0, 0.038, 0, 0, 0, 0.009, 0, 0.058, -0.208)
+material_override = SubResource("StandardMaterial3D_s5u3x")
+mesh = SubResource("SphereMesh_ku1hu")

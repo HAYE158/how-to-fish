@@ -1,0 +1,98 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxrh3"]
+resource_name = "paddle"
+albedo_color = Color(0.7254902, 0.44705883, 0.25882354, 1)
+roughness = 0.79
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_48u8x"]
+top_radius = 0.027
+bottom_radius = 0.027
+height = 0.88
+radial_segments = 12
+rings = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxrl3"]
+resource_name = "rubber"
+albedo_color = Color(0.16078432, 0.23529412, 0.27450982, 1)
+roughness = 0.79
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_uqxo5"]
+top_radius = 0.031
+bottom_radius = 0.031
+height = 0.232
+radial_segments = 12
+rings = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4p8jj"]
+resource_name = "silver"
+albedo_color = Color(0.54509807, 0.6862745, 0.70980394, 1)
+roughness = 0.79
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_46mku"]
+top_radius = 0.036
+bottom_radius = 0.036
+height = 0.07500002
+radial_segments = 12
+rings = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olfqm"]
+resource_name = "outfit"
+albedo_color = Color(0.15686275, 0.49411765, 0.4862745, 1)
+roughness = 0.79
+
+[sub_resource type="SphereMesh" id="SphereMesh_aqyt1"]
+radius = 1.0
+height = 2.0
+radial_segments = 24
+rings = 12
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ey0ck"]
+resource_name = "trim"
+albedo_color = Color(0.972549, 0.7294118, 0.3647059, 1)
+roughness = 0.79
+
+[sub_resource type="SphereMesh" id="SphereMesh_mts1m"]
+radius = 1.0
+height = 2.0
+radial_segments = 24
+rings = 12
+
+[sub_resource type="SphereMesh" id="SphereMesh_6nx4p"]
+radius = 1.0
+height = 2.0
+radial_segments = 24
+rings = 12
+
+[node name="HandPaddle" type="Node3D" unique_id=1968618242]
+
+[node name="WoodShaft" type="MeshInstance3D" parent="." unique_id=1196839487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.030000001, 0)
+material_override = SubResource("StandardMaterial3D_qxrh3")
+mesh = SubResource("CylinderMesh_48u8x")
+
+[node name="Grip" type="MeshInstance3D" parent="." unique_id=989511023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.004999999, 0)
+material_override = SubResource("StandardMaterial3D_wxrl3")
+mesh = SubResource("CylinderMesh_uqxo5")
+
+[node name="Collar" type="MeshInstance3D" parent="." unique_id=1791346552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37150002, 0)
+material_override = SubResource("StandardMaterial3D_4p8jj")
+mesh = SubResource("CylinderMesh_46mku")
+
+[node name="PaddleBlade" type="MeshInstance3D" parent="." unique_id=190998880]
+transform = Transform3D(0.127, 0, 0, 0, 0.233, 0, 0, 0, 0.027, 0, 0.574, 0)
+material_override = SubResource("StandardMaterial3D_olfqm")
+mesh = SubResource("SphereMesh_aqyt1")
+metadata/avatar_color = &"outfit"
+
+[node name="BladeTip" type="MeshInstance3D" parent="." unique_id=310856608]
+transform = Transform3D(0.082, 0, 0, 0, 0.058, 0, 0, 0, 0.021, 0, 0.737, -0.002)
+material_override = SubResource("StandardMaterial3D_ey0ck")
+mesh = SubResource("SphereMesh_mts1m")
+
+[node name="HandleCap" type="MeshInstance3D" parent="." unique_id=1720973843]
+transform = Transform3D(0.042, 0, 0, 0, 0.032, 0, 0, 0, 0.031, 0, -0.419, 0)
+material_override = SubResource("StandardMaterial3D_ey0ck")
+mesh = SubResource("SphereMesh_6nx4p")

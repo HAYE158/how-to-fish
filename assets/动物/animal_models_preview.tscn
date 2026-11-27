@@ -1,0 +1,101 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/动物/conch.tscn" id="1_xpxph"]
+[ext_resource type="PackedScene" path="res://assets/动物/scallop_shell.tscn" id="2_r2tmn"]
+[ext_resource type="PackedScene" path="res://assets/动物/white_rabbit.tscn" id="3_sqp3a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmhm0"]
+resource_name = "Warm sandstone"
+albedo_color = Color(0.7176471, 0.64705884, 0.5529412, 1)
+metallic_specular = 0.18
+roughness = 0.83
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jyf5e"]
+top_radius = 0.596
+bottom_radius = 0.624
+height = 0.09
+radial_segments = 56
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pmujb"]
+resource_name = "Lagoon slate"
+albedo_color = Color(0.3254902, 0.44313726, 0.4627451, 1)
+metallic_specular = 0.18
+roughness = 0.83
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tdmnu"]
+size = Vector2(180, 180)
+
+[sub_resource type="Environment" id="Environment_4mi5b"]
+background_mode = 1
+background_color = Color(0.49019608, 0.60784316, 0.6313726, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.9019608, 0.9490196, 0.96862745, 1)
+ambient_light_energy = 0.31
+tonemap_mode = 2
+
+[node name="AnimalModelsPreview" type="Node3D" unique_id=958148615]
+
+[node name="Display_Conch" type="Node3D" parent="." unique_id=1426834965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.553141, 0.16114949, -0.04542941)
+
+[node name="Conch" type="Node3D" parent="Display_Conch" unique_id=1804259555 instance=ExtResource("1_xpxph")]
+transform = Transform3D(5.5783615, 1.9732723, -1.2611824, -2.017597, 5.703666, 0, 1.1889856, 0.42058805, 5.917087, 0, 0, 0)
+
+[node name="Display_ScallopShell" type="Node3D" parent="." unique_id=1624394524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013278604, 0.17150526, -0.0749495)
+
+[node name="ScallopShell" type="Node3D" parent="Display_ScallopShell" unique_id=604303243 instance=ExtResource("2_r2tmn")]
+transform = Transform3D(-5.2696795, -0.28541574, 1.2350774, 0.22457097, 4.987097, 2.1106474, -1.2475761, 2.1032836, -4.836957, 0, 0, 0)
+
+[node name="Display_WhiteRabbit" type="Node3D" parent="." unique_id=637167971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3470756, 0.091, 0.014274895)
+
+[node name="WhiteRabbit" type="Node3D" parent="Display_WhiteRabbit" unique_id=1986215825 instance=ExtResource("3_sqp3a")]
+transform = Transform3D(-2.2422905, 0, 0.6691284, 0, 2.34, 0, -0.6691284, 0, -2.2422905, 0, 0, 0)
+
+[node name="Plinth00" type="MeshInstance3D" parent="." unique_id=907593290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34, 0.045, 0)
+material_override = SubResource("StandardMaterial3D_tmhm0")
+mesh = SubResource("CylinderMesh_jyf5e")
+
+[node name="Plinth01" type="MeshInstance3D" parent="." unique_id=1664200385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045, 0)
+material_override = SubResource("StandardMaterial3D_tmhm0")
+mesh = SubResource("CylinderMesh_jyf5e")
+
+[node name="Plinth02" type="MeshInstance3D" parent="." unique_id=593495049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36, 0.045, 0)
+material_override = SubResource("StandardMaterial3D_tmhm0")
+mesh = SubResource("CylinderMesh_jyf5e")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=336344188]
+material_override = SubResource("StandardMaterial3D_pmujb")
+mesh = SubResource("PlaneMesh_tdmnu")
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=2138104019]
+environment = SubResource("Environment_4mi5b")
+
+[node name="Key" type="DirectionalLight3D" parent="." unique_id=1002031265]
+transform = Transform3D(0.5547002, 0.50210005, -0.6634781, 0, 0.7974014, 0.60344917, 0.83205026, -0.33473337, 0.44231874, -4.2, 4.5, 2.8)
+light_color = Color(1, 0.9490196, 0.8862745, 1)
+light_energy = 0.82
+shadow_enabled = true
+directional_shadow_max_distance = 13.0
+
+[node name="Fill" type="DirectionalLight3D" parent="." unique_id=1241924790]
+transform = Transform3D(0.5812382, -0.2837089, 0.76267385, 0, 0.93725264, 0.3486509, -0.81373346, -0.20264922, 0.5447671, 4.2, 2.6, 3)
+light_color = Color(0.8862745, 0.94509804, 0.9882353, 1)
+light_energy = 0.29
+directional_shadow_max_distance = 13.0
+
+[node name="Rim" type="DirectionalLight3D" parent="." unique_id=1125761221]
+transform = Transform3D(-0.9805807, -0.111415245, 0.16139449, 0, 0.8229537, 0.56810856, -0.19611612, 0.5570763, -0.8069725, 1, 4.2, -5)
+light_color = Color(0.91764706, 1, 1, 1)
+light_energy = 0.38
+directional_shadow_max_distance = 13.0
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1662065520]
+transform = Transform3D(1, 0, 0, 0, 0.93426156, 0.35658836, 0, -0.35658836, 0.93426156, 0, 3.18, 6.55)
+projection = 1
+current = true
+size = 3.03

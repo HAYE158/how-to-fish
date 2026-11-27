@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://yfifeok0ca8j"]
 
 [ext_resource type="PackedScene" path="res://assets/船/帆船/single_mast_sailboat.tscn" id="1_hs4gs"]
 
@@ -19,7 +19,7 @@ ambient_light_energy = 0.56
 
 [node name="SailboatPreview" type="Node3D" unique_id=617104177]
 
-[node name="SingleMastSailboat" type="Node3D" parent="." unique_id=1153007358 instance=ExtResource("1_hs4gs")]
+[node name="SingleMastSailboat" parent="." unique_id=1153007358 instance=ExtResource("1_hs4gs")]
 
 [node name="Studio" type="Node3D" parent="." unique_id=1206698605]
 
